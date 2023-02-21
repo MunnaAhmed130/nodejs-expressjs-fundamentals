@@ -2,6 +2,9 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
     // in if statement use return instead of {}
+    //  IF YOU GET ERRORS WHILE USING ABOVE SETUP,
+    // SWITCH TO IF, ELSE IF, ELSE (BELOW)
+    // WE COVER THE CAUSE, LATER IN EXPRESS TUTORIAL
     if (req.url === "/")
         return res.end(`
         <h1>Welcome to our home page</h1>
