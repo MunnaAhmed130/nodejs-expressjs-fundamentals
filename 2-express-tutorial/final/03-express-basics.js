@@ -3,22 +3,16 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    // console.log(req.url);
     console.log("user hit the resource");
-
     // this has been depracated
     // res.status(201).send("Home Page");
     // use the code below
-    // res.sendStatus(200);
-
-    res.status(200).send("success");
+    res.send("Home Page").sendStatus(200);
 });
-// app.get("/favicon.ico", (req, res) => {
-//     res.send("home");
-// });
+
 app.get("/about", (req, res) => {
     // res.;
-    res.status(200).send("About Page ");
+    res.send("About Page").sendStatus(200);
 });
 
 app.all("*", (req, res) => {
