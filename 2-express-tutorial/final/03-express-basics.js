@@ -3,16 +3,22 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
+    // console.log(req.url);
     console.log("user hit the resource");
+
     // this has been depracated
     // res.status(201).send("Home Page");
     // use the code below
-    res.send("Home Page").sendStatus(200);
+    // res.sendStatus(200);
+
+    // code below will only show 200 ones after changing message and after that it will show 304
+    // if the cached message is not modified then it shows 304 not modified
+    res.status(200).send("success");
 });
 
 app.get("/about", (req, res) => {
     // res.;
-    res.send("About Page").sendStatus(200);
+    res.status(200).send("About Page ");
 });
 
 app.all("*", (req, res) => {

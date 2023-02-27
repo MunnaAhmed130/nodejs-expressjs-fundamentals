@@ -8,7 +8,6 @@ app.use(express.static("./public"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./navbar-app/index.html"));
-    // adding to static assets
 });
 
 app.all("*", (req, res) => {
