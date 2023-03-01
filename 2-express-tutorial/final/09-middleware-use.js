@@ -3,11 +3,10 @@ const app = express();
 const logger = require("./logger");
 const authorize = require("./authorize");
 // req => middleware => res
-
-// 1. use vs route
-// 2. options - our own / express / third party
-
-// app.use([logger, authorize]);
+// middleware on top of the function because order matters
+// app.use(logger); // for all the routes
+// app.use("/api", logger); // for api/home/about/products or any other /api routes
+app.use([logger, authorize]); // for multiple mw put them in an array they are executed in order logger first and authorize later
 
 app.get("/", (req, res) => {
     console.log(req.user);
@@ -21,8 +20,7 @@ app.get("/api/products", (req, res) => {
     res.send("Products");
 });
 
-app.get("/api/items", [logger, authorize], (req, res) => {
-    console.log(req.user);
+app.get("/api/items", (req, res) => {
     res.send("Items");
 });
 
