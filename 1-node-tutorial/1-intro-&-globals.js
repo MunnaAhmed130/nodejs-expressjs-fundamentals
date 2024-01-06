@@ -17,9 +17,11 @@ console.log(`hey it's my first node app!!!`);
 // process    - info about env where the program is being executed
 
 console.log(__filename);
-console.log(__dirname);
-// console.log(process);
-
+console.log(process.mainModule.filename);
+console.log("directory name", __dirname);
+console.log(process.cwd());
+// process.mainModule.path/filename
+console.log(process.mainModule.path);
 // setInterval(() => {
 //     console.log("hello world");
 // }, 1000);

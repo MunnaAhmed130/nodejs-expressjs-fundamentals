@@ -1,9 +1,11 @@
 // CommonJS, every file in module (by default)
 // Modules - Encapsulated Code (only share minimum)
-const names = require("./export/names"); //file location in brackets
+// file location in brackets always starts with ./
 
-const sayHi = require("./export/utils");
-const data = require("./export/alternative-flavor");
+const names = require("./exports/names");
+
+const sayHi = require("./exports/utils");
+const data = require("./exports/alternative-flavor");
 require("./7-mind-granade"); // execute not export
 
 sayHi("susan");
