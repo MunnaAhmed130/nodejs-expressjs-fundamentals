@@ -6,9 +6,9 @@ const john = "john";
 const peter = "peter";
 
 // module is a object with exports and other property
-console.log(module);
+console.log("names before export", module);
 
-// export default
+// default export multiple values
 module.exports = { john, peter }; // export default multiple value
 
-console.log(module);
+console.log("names after export", module);
