@@ -1,6 +1,6 @@
 // CommonJS, every file in module (by default)
 // Modules - Encapsulated Code (only share minimum)
-// file location in brackets always starts with ./
+// file location in brackets always starts with ./ for local modules
 
 // every time you use require the imported file also executes/runs
 const names = require("./exports/names");
