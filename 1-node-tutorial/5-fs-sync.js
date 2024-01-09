@@ -26,8 +26,9 @@ console.log(
 writeFileSync(
     "./content/result-sync.txt",
     `Here is the result : ${first}, ${second}\n`,
-    { flag: "a" }
+    { flag: "a" } // file system flag
 );
 
+// to check synchronous behaviour
 console.log("done with this task");
 console.log("starting the next one");

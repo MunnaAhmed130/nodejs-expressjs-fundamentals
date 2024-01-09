@@ -2,6 +2,9 @@ const { readFile, writeFile } = require("fs");
 
 console.log("start");
 
+// readFile & writeFile reads and writes to a file asynchronously
+// they take an additional callback function as argument
+// callback hell
 readFile("./content/first.txt", "utf8", (err, result) => {
     if (err) {
         console.log(err);
@@ -15,9 +18,11 @@ readFile("./content/first.txt", "utf8", (err, result) => {
             return;
         }
         const second = result;
+        console.log(first, second);
         writeFile(
             "./content/result-async.txt",
-            `Here is the result : ${first}, ${second}`,
+            `Here is the result : ${first}, ${second}\n`,
+            { flag: "w" },
             (err, result) => {
                 if (err) {
                     console.log(err);
@@ -28,4 +33,5 @@ readFile("./content/first.txt", "utf8", (err, result) => {
         );
     });
 });
+
 console.log("starting next task");
