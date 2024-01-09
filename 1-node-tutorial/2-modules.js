@@ -1,5 +1,5 @@
-// CommonJS, every file in module (by default)
-// Modules - Encapsulated Code (only share minimum)
+// CommonJS, every file in node is a module by default
+// Modules are Encapsulated Code (only share minimum / what we want)
 // file location in brackets always starts with ./ for local modules
 
 // every time you use require the imported file also executes/runs
