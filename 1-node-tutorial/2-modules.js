@@ -10,7 +10,7 @@ const names = require("./exports/names");
 
 const sayHi = require("./exports/utils");
 const data = require("./exports/alternative-flavor");
-require("./exports/mind-granade"); // only executes the mind-granade code
+require("./exports/mind-granade"); // only execute
 
 sayHi("susan");
 sayHi(names.john);
