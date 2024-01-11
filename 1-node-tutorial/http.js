@@ -16,8 +16,18 @@ const http = require("http");
 */
 
 // a client requests, server responses
-const server = http.createServer((req, res) => {});
+const server = http.createServer((req, res) => {
+    // console.log(req); // it's a giant object
+    if (req.url) {
+        console.log("s", req.url, req.method);
+    }
+    // sends a response header
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.write(`Welcome to our ${req.url} page`); // write a response to the client
+    res.end(); // end the response
+});
 
+// server object listens on port 5000
 server.listen(5000, () => {
     console.log("server listening on port 5000");
 });

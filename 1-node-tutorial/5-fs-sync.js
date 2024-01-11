@@ -1,6 +1,11 @@
+// file system module allows to work with the file system on your computer
+
 const { readFileSync, writeFileSync } = require("fs");
+
 // const fs = require("fs");
 // fs.readFileSync
+
+// File system module is used for create, read, update, delete, rename files
 
 console.log("\nstart \n");
 

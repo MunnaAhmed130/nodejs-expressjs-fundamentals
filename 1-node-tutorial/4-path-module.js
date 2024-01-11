@@ -2,23 +2,16 @@ const path = require("path");
 
 // path.sep provides platform specific separator
 // "\" on windows and "/" on Unix-like systems
-console.log(path.sep);
+console.log("path separator", path.sep);
 
 // joins path segments together using the platform-specific separator as a delimiter
 // then normalizes the resulting path.
 const filePath = path.join("/content/", "subfolder", "test.txt");
 console.log(filePath);
 
-// basename returns the last portion of a path
-const base = path.basename(filePath);
-console.log(base);
-
-// get extention name
-console.log(path.extname(base));
-
 // path.resolve resolves a sequence of path segments into an absolute path
 const absolute = path.resolve(__dirname, "content", "subfolder", "test.txt");
-console.log(absolute);
+console.log("absolute path", absolute);
 
 // get dir name from a path
 console.log(path.dirname(absolute));
@@ -30,3 +23,23 @@ const relative = path.relative(
 );
 
 console.log(relative);
+
+// basename returns the last portion of a path
+const base = path.basename(filePath);
+console.log("baseName", base, ", extensionName", path.extname(base));
+
+// ----------------------
+
+// console.log(__dirname);
+// console.log(__filename);
+
+// console.log(path.dirname(__filename));
+// console.log(path.dirname(__dirname));
+
+// console.log(path.basename(__filename));
+// console.log(path.basename(__dirname));
+
+// console.log(path.extname(__filename));
+
+// console.log(path.parse(__filename));
+// console.log(path.parse(__dirname));

@@ -19,7 +19,6 @@ const server = http.createServer((req, res) => {
         <a href="/error">To Error</a>
         `);
 
-    // res.write("Welcome to our home page");
     res.end(`
     <h1>Ooops!</h1>
     <p>We can't seem to find the page you are looking for </p>
@@ -27,5 +26,4 @@ const server = http.createServer((req, res) => {
     `);
 });
 
-// server is listening to port 5000
 server.listen(5000);

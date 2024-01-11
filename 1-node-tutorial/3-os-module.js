@@ -39,6 +39,10 @@ const currentOS = {
     release: os.release(),
     totlaMem: os.totalmem(),
     freeMem: os.freemem(),
+    homedir: os.homedir(),
+    version: os.version(),
+    currentdir: __dirname,
+    fileName: __filename,
 };
 
 console.log(currentOS);
