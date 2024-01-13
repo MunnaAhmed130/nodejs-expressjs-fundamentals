@@ -28,7 +28,7 @@ readFile("./content/first.txt", "utf8", (err, result) => {
             "./content/result-async.txt",
             `Here is the result : ${first}, ${second}\n`,
             { flag: "w" },
-            (err, result) => {
+            (err) => {
                 if (err) {
                     console.log(err);
                     return;

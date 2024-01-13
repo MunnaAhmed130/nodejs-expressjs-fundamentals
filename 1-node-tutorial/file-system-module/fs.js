@@ -5,7 +5,6 @@ const path = require("path");
 //     path.join(__dirname, "content", "first.txt"),
 //     "utf8"
 // );
-
 // console.log(data);
 
 fs.readFile(
@@ -19,6 +18,7 @@ fs.readFile(
 
 console.log("loading ...");
 
+// callback hell
 fs.writeFile(
     path.join(__dirname, "content", "reply.txt"),
     "This is a new line",
@@ -31,11 +31,21 @@ fs.writeFile(
             "\n\nThis is another line",
             (err) => {
                 if (err) throw err;
-                console.log("Write complete");
+                console.log("Append complete");
+
+                fs.rename(
+                    path.join(__dirname, "content", "reply.txt"),
+                    path.join(__dirname, "content", "fs.txt"),
+                    (err) => {
+                        if (err) throw err;
+                        console.log("Rename complete");
+                    }
+                );
             }
         );
     }
 );
+
 // exit on uncaught errors
 process.on("uncaughtException", (err) => {
     console.error(`There was an uncaught error ${err}`);
