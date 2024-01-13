@@ -12,8 +12,12 @@ console.log("\nstart \n");
 // readFileSync => read file synchronously
 // takes file path and optionally encoding and flag
 // generally use utf8 encoding, if encoding is not specified returns buffer
+const buffer = readFileSync("./content/first.txt");
 const first = readFileSync("./content/first.txt", "utf8");
 const second = readFileSync("./content/second.txt", "utf8");
+
+// convert buffer to text with .toString()
+console.log(buffer, buffer.toString());
 
 console.log(first);
 console.log(second, "\n");
