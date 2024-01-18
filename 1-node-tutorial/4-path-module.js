@@ -7,11 +7,11 @@ console.log("path separator", path.sep);
 // joins path segments together using the platform-specific separator as a delimiter
 // then normalizes the resulting path.
 const filePath = path.join("/content/", "subfolder", "test.txt");
-console.log(filePath);
+// console.log(filePath);
 
 // path.resolve resolves a sequence of path segments into an absolute path
 const absolute = path.resolve(__dirname, "content", "subfolder", "test.txt");
-console.log("absolute path", absolute);
+// console.log("absolute path", absolute);
 
 // get dir name from a path
 console.log(path.dirname(absolute));
@@ -26,7 +26,7 @@ console.log(relative);
 
 // basename returns the last portion of a path
 const base = path.basename(filePath);
-console.log("baseName", base, ", extensionName", path.extname(base));
+// console.log("baseName", base, ", extensionName", path.extname(base));
 
 // ----------------------
 
@@ -43,3 +43,13 @@ console.log("baseName", base, ", extensionName", path.extname(base));
 
 // console.log(path.parse(__filename));
 // console.log(path.parse(__dirname));
+
+// -----------------------------------------
+
+const commonPath = path.join(__dirname, "content");
+console.log("common path ->", commonPath);
+
+// console.log(typeof commonPath);// string
+
+const newPath = path.join(commonPath, "subfolder");
+console.log(newPath);
