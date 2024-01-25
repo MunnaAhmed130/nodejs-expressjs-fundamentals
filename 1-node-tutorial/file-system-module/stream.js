@@ -38,23 +38,23 @@ const writableStream = fs.createWriteStream(destination);
 //     console.log("done", chunckCount);
 // });
 
-// pipe
+let start = performance.now();
+// piping is efficient than above data listener
 readableStream.pipe(writableStream);
 
+console.log(performance.now() - start);
 // ------------------------------------------------------------
 
-// using stream with an async iterator to read from readable stream
-async function logChucks(readable) {
-    for await (const chunk of readable) {
-        console.log(chunk);
-    }
-}
+// // using stream with an async iterator to read from readable stream
+// async function logChucks(readable) {
+//     for await (const chunk of readable) {
+//         console.log(chunk);
+//     }
+// }
 
 // logChucks(fs.createReadStream("./content/first.txt", { encoding: "utf8" }));
 
 // -------------------------------------------------------------
-
-// let start = performance.now();
 
 // sync read & write file took around 4 sec
 // let bigFile = fs.readFileSync(source, { encoding: "utf8" });
@@ -73,8 +73,6 @@ async function logChucks(readable) {
 //     });
 //     console.log("done");
 // });
-
-// console.log(performance.now() - start);
 
 // So, async I/O is faster then sync, and stream is faster than async
 
