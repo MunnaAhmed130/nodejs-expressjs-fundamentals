@@ -6,9 +6,12 @@ readFile("./content/first.txt", (err, data) => {
     if (err) throw err;
     console.log("buffer data", data);
 });
+
 // readFile & writeFile reads and writes to a file asynchronously
 // they take an additional callback function as argument
-// callback hell
+
+// pros - async code, cons - messy code / callback hell
+
 readFile("./content/first.txt", "utf8", (err, result) => {
     if (err) {
         console.log(err);

@@ -10,9 +10,7 @@ const path = require("path");
 const source = path.join(__dirname, "content", "big.txt");
 const destination = path.join(__dirname, "content", "subfolder", "test.txt");
 
-const readableStream = fs.createReadStream(source, {
-    encoding: "utf8",
-});
+const readableStream = fs.createReadStream(source, { encoding: "utf8" });
 
 const writableStream = fs.createWriteStream(destination);
 
@@ -39,10 +37,12 @@ const writableStream = fs.createWriteStream(destination);
 // });
 
 let start = performance.now();
+
 // piping is efficient than above data listener
 readableStream.pipe(writableStream);
 
 console.log(performance.now() - start);
+
 // ------------------------------------------------------------
 
 // // using stream with an async iterator to read from readable stream

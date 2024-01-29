@@ -10,6 +10,8 @@ const { readFileSync, writeFileSync } = require("fs");
 console.log("\nstart \n");
 
 // readFileSync => read file synchronously
+// cons: blocking code
+
 // takes file path and optionally encoding and flag
 // generally use utf8 encoding, if encoding is not specified returns buffer
 const buffer = readFileSync("./content/first.txt");
