@@ -1,9 +1,12 @@
+// import names from "./exports/names.js";
+// console.log(names);
+
 // CommonJS, every file in node is a module by default
 // Modules are Encapsulated Code (only share minimum / what we want)
 // we use ./ to find local modules
 
 // every time you use require the imported file also executes/runs
-const names = require("./exports/names");
+const names = require("./exports/names.js");
 
 // destructure
 // const { john, peter } = require("./exports/names");
